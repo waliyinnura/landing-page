@@ -2,8 +2,7 @@
 import React from "react";
 import { LampContainer } from "./ui/LampEffect";
 import { motion } from "motion/react";
-import { ShootingStars } from "./ui/ShootingStar";
-import { StarsBackground } from "./ui/StarsBackground";
+import { useTheme } from "next-themes";
 
 const Hero = () => {
   return (
@@ -17,13 +16,11 @@ const Hero = () => {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="mt-4 bg-gradient-to-br from-slate-300 to-slate-500 py-1 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+          className="mt-4 bg-gradient-to-br from-slate-500 to-slate-700 dark:from-slate-300 dark:to-slate-500 py-1 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
         >
           SOMETHING BIG IS COMING
         </motion.h1>
       </LampContainer>
-      <ShootingStars />
-      <StarsBackground />
     </div>
   );
 };
