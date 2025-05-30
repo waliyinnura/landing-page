@@ -1,11 +1,12 @@
 import Hero from "@/components/Hero";
+import React from "react";
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="relative w-full flex flex-col items-center justify-center overflow-hidden md:overflow-visible bg-white dark:bg-black">
-      <div className="w-full">
-        <Hero />
-      </div>
+    <main className="relative flex justify-center h-screen">
+      <Hero />
     </main>
   );
-}
+};
+
+export default Home;
