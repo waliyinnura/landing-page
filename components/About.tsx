@@ -1,6 +1,8 @@
 import React from "react";
 import { Card, Carousel } from "./ui/CardCarousel";
 import { FaAnglesLeft } from "react-icons/fa6";
+import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   const cards = data.map((card, index) => (
@@ -8,17 +10,15 @@ const About = () => {
   ));
 
   return (
-    <main className="relative h-full w-full py-20 flex flex-col items-center justify-center overflow-hidden md:overflow-visible bg-grey dark:bg-gold-700">
-      <div>
-        <a href="/" className="relative ml-4">
-          <FaAnglesLeft className="invert dark:invert-0" />
-        </a>
-        <h2 className="m-4 mt-8 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-          Who we are?
-        </h2>
-        <Carousel items={cards} />
-      </div>
-    </main>
+    <div>
+      <Link href="/" className="relative ml-4">
+        <FaAnglesLeft className="invert dark:invert-0" />
+      </Link>
+      <h2 className="m-4 mt-8 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+        Who we are?
+      </h2>
+      <Carousel items={cards} />
+    </div>
   );
 };
 
@@ -40,7 +40,7 @@ const DummyContent = () => {
               Langotiya jeetu ka mara hua yaar is ready to capture every
               thought.
             </p>
-            <img
+            <Image
               src="https://assets.aceternity.com/macbook.png"
               alt="Macbook mockup from Aceternity UI"
               height="500"

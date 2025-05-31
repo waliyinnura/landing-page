@@ -20,13 +20,13 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-grey dark:bg-gold-700 w-full rounded-md z-0",
+        "relative flex h-full flex-col items-center justify-center overflow-hidden bg-grey dark:bg-gold-700 w-full rounded-md z-0",
         className
       )}
     >
       <ThemeSwitcher />
       <motion.div
-        className="absolute top-[23%] z-50"
+        className="absolute top-[20%] z-50"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
@@ -111,7 +111,7 @@ export const LampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-grey dark:bg-gold-700 "></div>
       </div>
 
-      <div className="relative z-25 flex -translate-y-[30rem] flex-col items-center px-5">
+      <div className="relative z-25 flex -translate-y-[23rem] flex-col items-center px-5">
         {children}
       </div>
     </div>
