@@ -4,21 +4,21 @@ import { FaAnglesLeft } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 
-const About = () => {
+const AboutPage = () => {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
 
   return (
-    <div>
-      <Link href="/" className="relative ml-4">
-        <FaAnglesLeft className="invert dark:invert-0" />
+    <>
+      <Link href="/">
+        <FaAnglesLeft className="m-4 mb-6 invert dark:invert-0" />
       </Link>
-      <h2 className="m-4 mt-8 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="m-4 mb-6 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200">
         Who we are?
       </h2>
       <Carousel items={cards} />
-    </div>
+    </>
   );
 };
 
@@ -33,7 +33,7 @@ const DummyContent = () => {
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                The first rule of Apple club is that you boast about Apple club.
+                The first rule of Apple club is that you boast Page Apple club.
               </span>{" "}
               Keep a journal, quickly jot down a grocery list, and take amazing
               class notes. Want to convert those notes to text? No problem.
@@ -94,4 +94,4 @@ const data = [
   },
 ];
 
-export default About;
+export default AboutPage;

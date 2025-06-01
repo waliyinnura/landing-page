@@ -1,12 +1,14 @@
-import About from "@/components/About";
+import AboutPage from "@/components/About";
 import React from "react";
 
-const AboutPage = () => {
+const About = () => {
   return (
-    <main className="relative flex justify-center h-screen w-screen bg-grey dark:bg-gold-700">
-      <About />
+    <main className="relative flex justify-center h-full w-full bg-neutral-200 dark:bg-neutral-900">
+      <div className="w-full max-w-7xl">
+        <AboutPage />
+      </div>
     </main>
   );
 };
 
-export default AboutPage;
+export default About;

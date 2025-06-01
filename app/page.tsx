@@ -3,8 +3,8 @@ import React from "react";
 
 const Home = () => {
   return (
-    <main className="relative flex justify-center h-screen w-screen bg-grey dark:bg-gold-700">
-      <div className="w-full h-full max-w-7xl">
+    <main className="relative flex justify-center h-screen w-screen bg-neutral-200 dark:bg-neutral-900">
+      <div className="w-full max-w-7xl">
         <Hero />
       </div>
     </main>

@@ -14,7 +14,7 @@ const Hero = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8 uppercase bg-gradient-to-br dark:from-slate-300 from-slate-400 dark:to-slate-500 to-slate-800 py-4 bg-clip-text text-center text-3xl font-medium tracking-wide text-transparent md:text-5xl"
+        className="mt-8 uppercase bg-gradient-to-br dark:from-slate-300 from-slate-400 dark:to-slate-500 to-slate-800 py-4 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl"
       >
         Something Big is Coming
       </motion.h1>
