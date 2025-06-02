@@ -133,7 +133,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="flex justify-end gap-2 mb-4">
+        <div className="flex justify-end gap-2 m-4">
           <button
             className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
             onClick={scrollLeft}
@@ -261,6 +261,7 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
+          sizes="100%"
           className="absolute inset-0 z-10 object-cover"
         />
       </motion.button>
