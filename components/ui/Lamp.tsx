@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 // import ThemeSwitcher from "../ThemeSwitcher";
 import Link from "next/link";
+import { ShootingStars } from "./ShootingStars";
+import { StarsBackground } from "./StarsBackground";
 
 export const LampContainer = ({
   children,
@@ -25,33 +27,33 @@ export const LampContainer = ({
       )}
     >
       {/* <ThemeSwitcher /> */}
+      <motion.div
+        className="absolute top-[23rem] z-[999]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+      >
+        <nav>
+          <ul className="flex items-center justify-center gap-4 z-[999]">
+            {navigation.map((item) => (
+              <li key={item.href}>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </motion.div>
       <div className="relative flex w-full h-full items-center justify-center z-0">
-        <motion.div
-          className="absolute top-[23rem] z-50"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-        >
-          <nav>
-            <ul className="flex items-center justify-center gap-4">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: "12rem" }}
           whileInView={{ opacity: 1, width: "24rem" }}
@@ -111,6 +113,8 @@ export const LampContainer = ({
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-neutral-200 dark:bg-neutral-900 "></div>
         <div className="relative z-40 flex items-center px-5">{children}</div>
       </div>
+      <ShootingStars />
+      <StarsBackground />
     </div>
   );
 };

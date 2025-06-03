@@ -2,7 +2,6 @@
 import React from "react";
 import { LampContainer } from "./ui/Lamp";
 import { motion } from "motion/react";
-import { SplashCursor } from "./ui/SplashCursor";
 
 const Hero = () => {
   return (
@@ -19,7 +18,6 @@ const Hero = () => {
       >
         We Create an Art
       </motion.h1>
-      <SplashCursor />
     </LampContainer>
   );
 };
