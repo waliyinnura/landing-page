@@ -24,34 +24,34 @@ export const LampContainer = ({
         className
       )}
     >
-      <ThemeSwitcher />
-      <motion.div
-        className="absolute top-10 z-50"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-      >
-        <nav>
-          <ul className="flex items-center justify-center gap-4">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </motion.div>
+      {/* <ThemeSwitcher /> */}
       <div className="relative flex w-full h-full items-center justify-center z-0">
+        <motion.div
+          className="absolute top-[23rem] z-50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+        >
+          <nav>
+            <ul className="flex items-center justify-center gap-4">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: "12rem" }}
           whileInView={{ opacity: 1, width: "24rem" }}

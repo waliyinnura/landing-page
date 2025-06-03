@@ -1,218 +1,97 @@
-"use client";
+import { Button } from "@/components/Button";
 
-import * as React from "react";
-// import { Button } from "@/components/Button";
-// import { Input } from "@/components/ui/input"
-// import { Label } from "@/components/ui/label"
-// import { Switch } from "@/components/ui/switch"
-// import { Textarea } from "@/components/ui/textarea"
-// import {
-//   Tooltip,
-//   TooltipContent,
-//   TooltipProvider,
-//   TooltipTrigger,
-// } from "@/components/ui/tooltip";
-// import {
-//   Facebook,
-//   Instagram,
-//   Linkedin,
-//   Moon,
-//   Send,
-//   Sun,
-//   Twitter,
-// } from "lucide-react";
-import ThemeSwitcher from "./ThemeSwitcher";
+interface FooterProps {
+  logo: React.ReactNode;
+  brandName: string;
+  socialLinks: Array<{
+    icon: React.ReactNode;
+    href: string;
+    label: string;
+  }>;
+  mainLinks: Array<{
+    href: string;
+    label: string;
+  }>;
+  legalLinks: Array<{
+    href: string;
+    label: string;
+  }>;
+  copyright: {
+    text: string;
+    license?: string;
+  };
+}
 
-function Footer() {
-  //   const [isDarkMode, setIsDarkMode] = React.useState(true);
-  //   const [isChatOpen, setIsChatOpen] = React.useState(false);
-
-  //   React.useEffect(() => {
-  //     if (isDarkMode) {
-  //       document.documentElement.classList.add("dark");
-  //     } else {
-  //       document.documentElement.classList.remove("dark");
-  //     }
-  //   }, [isDarkMode]);
-
+export default function Footer({
+  logo,
+  brandName,
+  socialLinks,
+  mainLinks,
+  legalLinks,
+  copyright,
+}: FooterProps) {
   return (
-    <footer className="relative border-t bg-background text-foreground transition-colors duration-300">
-      <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">
-              Stay Connected
-            </h2>
-            <p className="mb-6 text-muted-foreground">
-              Join our newsletter for the latest updates and exclusive offers.
-            </p>
-            <form className="relative">
-              {/* <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 backdrop-blur-sm"
-              />
+    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
+      <div className="md:flex md:items-start md:justify-between">
+        <a
+          href="/"
+          className="flex items-center gap-x-2"
+          aria-label={brandName}
+        >
+          {logo}
+          <span className="font-bold text-xl">{brandName}</span>
+        </a>
+        <ul className="flex list-none mt-6 md:mt-0 space-x-3">
+          {socialLinks.map((link, i) => (
+            <li key={i}>
               <Button
-                type="submit"
+                variant="secondary"
                 size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105"
+                className="h-10 w-10 rounded-full"
+                asChild
               >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Subscribe</span>
-              </Button> */}
-            </form>
-            <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
-          </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
-            <nav className="space-y-2 text-sm">
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                About Us
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Services
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Products
-              </a>
-              <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Contact
-              </a>
-            </nav>
-          </div>
-          <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
-            </address>
-          </div>
-          <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
-            {/* <div className="mb-6 flex space-x-4">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Facebook className="h-4 w-4" />
-                      <span className="sr-only">Facebook</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Facebook</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Twitter className="h-4 w-4" />
-                      <span className="sr-only">Twitter</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Twitter</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Instagram className="h-4 w-4" />
-                      <span className="sr-only">Instagram</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Instagram</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                      <span className="sr-only">LinkedIn</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Connect with us on LinkedIn</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div> */}
-            <div className="flex items-center h-4 w-4">
-              {/* <Sun className="h-4 w-4" />
-              <Switch
-                id="dark-mode"
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
-              />
-              <Moon className="h-4 w-4" />
-              <Label htmlFor="dark-mode" className="sr-only">
-                Toggle dark mode
-              </Label> */}
-              <ThemeSwitcher />
-            </div>
-          </div>
+                <a href={link.href} target="_blank" aria-label={link.label}>
+                  {link.icon}
+                </a>
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="border-t mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
+        <nav className="lg:mt-0 lg:col-[4/11]">
+          <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
+            {mainLinks.map((link, i) => (
+              <li key={i} className="my-1 mx-2 shrink-0">
+                <a
+                  href={link.href}
+                  className="text-sm text-primary underline-offset-4 hover:underline"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="mt-6 lg:mt-0 lg:col-[4/11]">
+          <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
+            {legalLinks.map((link, i) => (
+              <li key={i} className="my-1 mx-3 shrink-0">
+                <a
+                  href={link.href}
+                  className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © 2024 Your Company. All rights reserved.
-          </p>
-          <nav className="flex gap-4 text-sm">
-            <a href="#" className="transition-colors hover:text-primary">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Terms of Service
-            </a>
-            <a href="#" className="transition-colors hover:text-primary">
-              Cookie Settings
-            </a>
-          </nav>
+        <div className="mt-6 text-sm leading-6 text-muted-foreground whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
+          <div>{copyright.text}</div>
+          {copyright.license && <div>{copyright.license}</div>}
         </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;
