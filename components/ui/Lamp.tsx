@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import ThemeSwitcher from "../ThemeSwitcher";
+// import ThemeSwitcher from "../ThemeSwitcher";
 import Link from "next/link";
 
 export const LampContainer = ({
